@@ -1,0 +1,59 @@
+/*
+ * Paste into Paperform: Theme & Appearance → Custom CSS → Edit CSS
+ * Form: u2uissty (2026 Main Form)
+ *
+ * Brand: blue #1E3AFF, gold #FDC656
+ * After deploy, host assets/paperform-sports/*.svg on your CDN and update URLs below.
+ */
+
+:root {
+  --pf-active: #1E3AFF !important;
+  --pf-submit: #1E3AFF !important;
+}
+
+/* Buttons, pagination, selected states */
+.btn-primary,
+.btn-raised.btn-primary,
+.Pagination__btn--next,
+.GuidedModeInstructions__button:not(.GuidedModeInstructions__button--back),
+.submit {
+  background-color: #1E3AFF !important;
+  border-color: #1E3AFF !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.Pagination__btn--next:hover,
+.submit:hover {
+  background-color: #1528cc !important;
+  border-color: #1528cc !important;
+}
+
+/* Selected choice / radio / checkbox accents */
+.Choices__choice--selected,
+.Choices__choice.btn-primary,
+[role='radio'][aria-checked='true'],
+[role='checkbox'][aria-checked='true'] {
+  border-color: #1E3AFF !important;
+}
+
+.Choices__choice--selected .Choices__choice-indicator,
+[role='radio'][aria-checked='true'] .Choices__choice-indicator {
+  background-color: #1E3AFF !important;
+  border-color: #1E3AFF !important;
+}
+
+/* Links and typed answer underline */
+a,
+.LiveField__answer input:focus,
+.LiveField__answer textarea:focus {
+  color: #1E3AFF !important;
+  border-color: #1E3AFF !important;
+}
+
+/* Sport icon images – shift embedded red (#ef4142) toward brand gold */
+.Choices__choice img,
+.Choices__choice svg,
+.ImageOption img {
+  filter: hue-rotate(46deg) saturate(1.15) brightness(1.02) !important;
+}

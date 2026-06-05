@@ -424,6 +424,23 @@ ul { list-style: none; }
   height: 72px;
 }
 
+/* Replace Paperform sport SVG red accents (if any remain) */
+.sport-card__icon svg [fill="#ff3b3b"],
+.sport-card__icon svg [fill="#ef4142"],
+.sport-card__icon svg [fill="#e62e2e"],
+.sport-card__icon svg [fill="#ff2121"],
+.sport-card__icon svg [fill="#990000"] {
+  fill: var(--colorAccent) !important;
+}
+
+.sport-card__icon svg [stroke="#ff3b3b"],
+.sport-card__icon svg [stroke="#ef4142"],
+.sport-card__icon svg [stroke="#e62e2e"],
+.sport-card__icon svg [stroke="#ff2121"],
+.sport-card__icon svg [stroke="#990000"] {
+  stroke: var(--colorBrand) !important;
+}
+
 /* Form inputs */
 .form-input {
   width: 100%;

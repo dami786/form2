@@ -1,0 +1,9 @@
+/**
+ * Parent-page workaround for Paperform iframe theme (cross-origin).
+ * Shifts embedded red UI toward brand blue. Icons may look slightly blue vs gold
+ * until paperform-custom.css is applied in the Paperform dashboard.
+ */
+.paperform-wrapper iframe {
+  /* #ff3b3b / #ef4142 → ~#1E3AFF range */
+  filter: hue-rotate(228deg) saturate(1.05);
+}
