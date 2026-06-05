@@ -1,9 +1,7 @@
 /**
- * Parent-page workaround for Paperform iframe theme (cross-origin).
- * Shifts embedded red UI toward brand blue. Icons may look slightly blue vs gold
- * until paperform-custom.css is applied in the Paperform dashboard.
+ * Paperform iframe: shift red icon accents + nav buttons toward #1E3A5F.
+ * Do not use brightness() — it darkens the entire form background.
  */
 .paperform-wrapper iframe {
-  /* #ff3b3b / #ef4142 → ~#1E3AFF range */
-  filter: hue-rotate(228deg) saturate(1.05);
+  filter: hue-rotate(220deg) saturate(0.42);
 }

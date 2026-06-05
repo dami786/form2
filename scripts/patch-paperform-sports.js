@@ -22,9 +22,9 @@ const SPORTS = [
 
 const REPLACEMENTS = [
   [/#ef4142/gi, '#FDC656'],
-  [/#ff3b3b/gi, '#1E3AFF'],
-  [/#e62e2e/gi, '#1E3AFF'],
-  [/#ff2121/gi, '#1E3AFF'],
+  [/#ff3b3b/gi, '#1E3A5F'],
+  [/#e62e2e/gi, '#1E3A5F'],
+  [/#ff2121/gi, '#1E3A5F'],
   [/#990000/gi, '#1528cc'],
 ];
 

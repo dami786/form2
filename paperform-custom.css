@@ -15,18 +15,15 @@
 .btn-primary,
 .btn-raised.btn-primary,
 .Pagination__btn--next,
-.GuidedModeInstructions__button:not(.GuidedModeInstructions__button--back),
-.submit {
-  background-color: #1E3AFF !important;
-  border-color: #1E3AFF !important;
+.Pagination__btn--previous {
+  background-color: #1E3A5F !important;
+  border-color: #1E3A5F !important;
 }
 
-.btn-primary:hover,
-.btn-primary:focus,
 .Pagination__btn--next:hover,
-.submit:hover {
-  background-color: #1528cc !important;
-  border-color: #1528cc !important;
+.Pagination__btn--previous:hover {
+  background-color: #162d4a !important;
+  border-color: #162d4a !important;
 }
 
 /* Selected choice / radio / checkbox accents */
