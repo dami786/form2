@@ -201,7 +201,19 @@ body.template-page-pro-series .main-content {
   padding-bottom: 48px;
 }
 
-/* Home / start project */
+/* Home / start project – form-only view */
+body.template-page-home .toolbar,
+body.template-page-home .header-sticky-wrapper,
+body.template-page-home .site-footer,
+body.template-page-home .smart-accessibility-widget {
+  display: none !important;
+}
+
+body.template-page-home .main-content {
+  padding-top: 24px;
+  padding-bottom: 32px;
+}
+
 body.template-page-home .paperform-wrapper {
   min-height: 560px;
 }
