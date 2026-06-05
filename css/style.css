@@ -6,8 +6,10 @@
   --typeHeaderSpacing: 0.1em;
   --typeBaseSize: 16px;
   --typeBaseSpacing: 0.05em;
-  --colorBrand: #ff3b3b;
-  --colorBrandDark: #e62e2e;
+  --colorBrand: #1E3AFF;
+  --colorBrandDark: #1528cc;
+  --colorAccent: #FDC656;
+  --colorAccentDark: #e5b04d;
   --colorText: #1a1a1a;
   --colorTextLight: #777;
   --colorBorder: #e5e5e5;
@@ -199,7 +201,7 @@ ul { list-style: none; }
   left: 14px;
   right: 14px;
   height: 2px;
-  background: var(--colorText);
+  background: var(--colorAccent);
   transform: scaleX(0);
   transition: transform 0.25s;
 }
@@ -373,8 +375,8 @@ ul { list-style: none; }
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 .sport-card.is-selected {
-  border-color: #999;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  border-color: var(--colorBrand);
+  box-shadow: 0 2px 10px rgba(30, 58, 255, 0.12);
 }
 
 .sport-card--other {
@@ -405,8 +407,8 @@ ul { list-style: none; }
   transition: all 0.2s;
 }
 .sport-card.is-selected .sport-card__radio {
-  border-color: var(--colorText);
-  background: var(--colorText);
+  border-color: var(--colorBrand);
+  background: var(--colorBrand);
   box-shadow: inset 0 0 0 2.5px #fff;
 }
 
@@ -434,7 +436,7 @@ ul { list-style: none; }
   transition: border-color 0.2s;
   background: #fff;
 }
-.form-input:focus { border-color: var(--colorText); }
+.form-input:focus { border-color: var(--colorBrand); }
 .form-textarea { resize: vertical; min-height: 120px; }
 
 .quantity-options {
@@ -458,8 +460,8 @@ ul { list-style: none; }
 }
 .qty-option input:checked + span,
 .qty-option:hover span {
-  border-color: var(--colorText);
-  background: #fafafa;
+  border-color: var(--colorBrand);
+  background: rgba(253, 198, 86, 0.15);
 }
 
 .form-thankyou { text-align: center; padding: 48px 20px; }
@@ -847,7 +849,7 @@ body.drawer-open {
   display: block;
   width: 100%;
   padding: 16px;
-  background: #000;
+  background: var(--colorBrand);
   color: #fff;
   text-align: center;
   text-transform: uppercase;
@@ -968,7 +970,7 @@ body.drawer-open {
   text-transform: uppercase;
   letter-spacing: 0.15em;
 }
-.btn--primary { background: #000; color: #fff; width: 100%; }
+.btn--primary { background: var(--colorBrand); color: #fff; width: 100%; }
 .btn--primary:hover { opacity: 0.85; }
 .btn--full { width: 100%; }
 
