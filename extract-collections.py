@@ -1,0 +1,156 @@
+"""Download JerseyBird collection/product pages and build js/collections-data.js."""
+import json
+import os
+import re
+import subprocess
+import sys
+
+ROOT = os.path.dirname(os.path.abspath(__file__))
+
+COLLECTIONS = {
+    '1984-salihlispor': '/collections/1984-salihlispor',
+    'al-qabila-fc': '/collections/al-qabila-fc',
+    'bowleys-athletic-club': '/collections/bowleys-athletic-club',
+    'cuenca-jrs': '/collections/cuenca-jrs',
+    'jerseybird-night-2025': '/collections/jerseybird-night-2025',
+    'herrera-fc': '/collections/herrera-fc',
+    'kahawa-pride-fc': '/collections/kahawa-pride-fc',
+    'philippines-national-team': '/collections/2023-2024-philippines-national-team-jerseys',
+    'walton-hersham-fc': '/collections/walton-hersham-fc',
+    'jerseybird-apparel': '/collections/jerseybird-apparel-1',
+}
+
+PRODUCT_PAGES = {
+    'fcb-magpies': '/products/fcb-magpies-2024-special-shirt-preorder',
+    'vv-vianen': '/products/vv-vianen-2024-special-shirt',
+}
+
+REF_MAP = {
+    '1984-salihlispor': 'ref-collection-sample.html',
+}
+
+
+def fetch(path, ref_name):
+    ref_path = os.path.join(ROOT, ref_name)
+    if os.path.isfile(ref_path) and os.path.getsize(ref_path) > 50000:
+        return open(ref_path, encoding='utf-8', errors='replace').read()
+    url = 'https://jerseybird.com' + path
+    print('fetch', url)
+    subprocess.run(
+        ['curl.exe', '-sL', url, '-o', ref_path],
+        check=True,
+        cwd=ROOT,
+    )
+    return open(ref_path, encoding='utf-8', errors='replace').read()
+
+
+def normalize_image(src):
+    if not src:
+        return ''
+    if src.startswith('//'):
+        src = 'https:' + src
+    return re.sub(r'\{width\}', '540', src)
+
+
+def parse_collection_products(html):
+    products = []
+    seen = set()
+    chunks = html.split('data-product-handle="')
+    for chunk in chunks[1:]:
+        handle = chunk.split('"', 1)[0].strip()
+        if not handle or handle in seen:
+            continue
+        seen.add(handle)
+        title_m = re.search(
+            r'grid-product__title grid-product__title--heading">([^<]+)',
+            chunk,
+        )
+        price_m = re.search(r'grid-product__price">([^<\n]+)', chunk)
+        img_m = re.search(r'data-src="([^"]+)"', chunk)
+        if not title_m:
+            continue
+        sold = 'grid-product__tag--sold-out' in chunk[:2500]
+        products.append({
+            'handle': handle,
+            'title': title_m.group(1).strip(),
+            'price': (price_m.group(1).strip() if price_m else ''),
+            'soldOut': sold,
+            'image': normalize_image(img_m.group(1) if img_m else ''),
+        })
+    return products
+
+
+def parse_product_page(html, handle):
+    title_m = re.search(r'<h1[^>]*class="[^"]*product-single__title[^"]*"[^>]*>([^<]+)', html)
+    if not title_m:
+        title_m = re.search(r'product-single__title[^>]*>([^<]+)', html)
+    price_m = re.search(r'product__price[^>]*>.*?([\$£][\d,.]+)', html, re.S)
+    img_m = re.search(r'product-single__photo[^>]*>.*?src="([^"]+)"', html, re.S)
+    if not img_m:
+        img_m = re.search(r'data-src="([^"]+)"', html)
+    sold = 'sold-out' in html.lower()[:8000] or 'Sold out' in html[:12000]
+    desc_m = re.search(r'class="rte[^"]*"[^>]*>(.*?)</div>', html, re.S)
+    desc = ''
+    if desc_m:
+        desc = re.sub(r'<[^>]+>', ' ', desc_m.group(1))
+        desc = re.sub(r'\s+', ' ', desc).strip()[:400]
+    return {
+        'handle': handle,
+        'title': (title_m.group(1).strip() if title_m else handle.upper()),
+        'price': (price_m.group(1).strip() if price_m else ''),
+        'soldOut': sold,
+        'image': normalize_image(img_m.group(1) if img_m else ''),
+        'description': desc,
+    }
+
+
+def collection_title(html, fallback):
+    m = re.search(
+        r'section-header__title">\s*([^<]+?)\s*</h1>',
+        html,
+    )
+    if m:
+        return m.group(1).strip().upper()
+    return fallback.upper()
+
+
+def main():
+    site_collections = {}
+    for handle, path in COLLECTIONS.items():
+        ref = REF_MAP.get(handle, f'ref-col-{handle}.html')
+        html = fetch(path, ref)
+        products = parse_collection_products(html)
+        title = collection_title(html, handle.replace('-', ' '))
+        print(f'  {handle}: {len(products)} products')
+        site_collections[handle] = {'title': title, 'products': products}
+
+    site_products = {}
+    for handle, path in PRODUCT_PAGES.items():
+        ref = f'ref-product-{handle}.html'
+        html = fetch(path, ref)
+        p = parse_product_page(html, handle)
+        site_products[handle] = {
+            'title': p['title'],
+            'collection': handle,
+            'price': p['price'],
+            'soldOut': p['soldOut'],
+            'image': p['image'],
+            'description': p.get('description', ''),
+        }
+        print(f'  product {handle}: {p["title"][:40]}')
+
+    out = os.path.join(ROOT, 'js', 'collections-data.js')
+    js = (
+        '/* Auto-generated by extract-collections.py – product data from JerseyBird */\n'
+        'window.SITE_COLLECTIONS = '
+        + json.dumps(site_collections, indent=2, ensure_ascii=False)
+        + ';\n\nwindow.SITE_PRODUCT_PAGES = '
+        + json.dumps(site_products, indent=2, ensure_ascii=False)
+        + ';\n'
+    )
+    open(out, 'w', encoding='utf-8').write(js)
+    print('wrote', out)
+
+
+if __name__ == '__main__':
+    main()

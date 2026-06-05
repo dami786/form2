@@ -1,0 +1,26 @@
+/* Local catalog for search (matches shop nav collections) */
+window.SITE_PRODUCTS = [
+  { title: '1984 Salihlispor', handle: '1984-salihlispor', collection: '1984-salihlispor', tags: 'team soccer football salihlispor', type: 'product' },
+  { title: 'Al Qabila FC', handle: 'al-qabila-fc', collection: 'al-qabila-fc', tags: 'team soccer football', type: 'product' },
+  { title: "Bowley's Athletic Club", handle: 'bowleys-athletic-club', collection: 'bowleys-athletic-club', tags: 'team athletic club', type: 'product' },
+  { title: 'Cuenca Juniors', handle: 'cuenca-jrs', collection: 'cuenca-jrs', tags: 'team soccer juniors', type: 'product' },
+  { title: 'FCB Magpies', handle: 'fcb-magpies', url: 'product.html?p=fcb-magpies', tags: 'team soccer magpies', type: 'product' },
+  { title: 'JerseyBird Night 2025', handle: 'jerseybird-night-2025', collection: 'jerseybird-night-2025', tags: 'apparel night 2025 event', type: 'product' },
+  { title: 'Herrera FC', handle: 'herrera-fc', collection: 'herrera-fc', tags: 'team soccer herrera', type: 'product' },
+  { title: 'Kahawa Pride FC', handle: 'kahawa-pride-fc', collection: 'kahawa-pride-fc', tags: 'team soccer pride', type: 'product' },
+  { title: 'Kahawa Pride FC Discord Membership', handle: 'membership', url: 'membership.html', tags: 'discord membership kahawa', type: 'page' },
+  { title: "Philippines Men's National Football Team", handle: 'philippines-national-team', collection: 'philippines-national-team', tags: 'national team philippines football', type: 'product' },
+  { title: 'VV Vianen', handle: 'vv-vianen', url: 'product.html?p=vv-vianen', tags: 'vv vianen soccer', type: 'product' },
+  { title: 'Walton & Hersham', handle: 'walton-hersham-fc', collection: 'walton-hersham-fc', tags: 'walton hersham fc', type: 'product' },
+  { title: 'JerseyBird Apparel', handle: 'jerseybird-apparel', collection: 'jerseybird-apparel', tags: 'apparel clothing shop', type: 'product' },
+  { title: 'Place a Reorder', handle: 'reorder', url: 'reorder.html', tags: 'reorder project jersey', type: 'page' },
+  { title: 'JerseyBird On Tour', handle: 'on-tour', url: 'on-tour.html', tags: 'tour event', type: 'page' },
+  { title: 'What is JerseyBird?', handle: 'about', url: 'about.html', tags: 'about company jerseybird', type: 'page' },
+  { title: 'FAQs', handle: 'faqs', url: 'faqs.html', tags: 'faq help questions shipping team order', type: 'page' },
+  { title: 'Contact Us', handle: 'contact', url: 'contact.html', tags: 'contact support email', type: 'page' },
+  { title: 'Shipping Policy', handle: 'shipping', url: 'shipping-policy.html', tags: 'shipping delivery policy', type: 'page' },
+  { title: 'Returns & Refunds Policy', handle: 'returns', url: 'returns-policy.html', tags: 'returns refund exchange', type: 'page' },
+  { title: 'Start a Project', handle: 'project', url: 'index.html', tags: 'project form jersey design custom', type: 'page' },
+  { title: 'JerseyBird Pro Series', handle: 'pro-series', url: 'pro-series.html', tags: 'pro series', type: 'page' },
+  { title: 'Become an Ambassador', handle: 'ambassador', url: 'ambassador.html', tags: 'ambassador application', type: 'page' }
+];

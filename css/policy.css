@@ -1,0 +1,84 @@
+/* Policy / FAQ / content pages */
+body.template-page-policy .main-content,
+body.template-page-policy .policy-page {
+  padding: 40px 0 64px;
+}
+
+body.template-page-policy .page-width--narrow {
+  max-width: 800px;
+}
+
+body.template-page-policy .section-header {
+  margin-bottom: 28px;
+}
+
+body.template-page-policy .section-header__title {
+  font-size: clamp(28px, 5vw, 40px);
+  letter-spacing: 0.1em;
+}
+
+body.template-page-policy .rte,
+body.template-page-policy .shopify-policy__rte {
+  font-size: 15px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+body.template-page-policy .rte p,
+body.template-page-policy .shopify-policy__rte p {
+  margin-bottom: 16px;
+}
+
+body.template-page-policy .rte h2,
+body.template-page-policy .shopify-policy__rte h2 {
+  font-family: var(--typeHeaderPrimary);
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 28px 0 12px;
+}
+
+body.template-page-policy .rte h3,
+body.template-page-policy .shopify-policy__rte h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 20px 0 10px;
+}
+
+body.template-page-policy .rte ul,
+body.template-page-policy .shopify-policy__rte ul {
+  margin: 0 0 16px 1.2em;
+  padding: 0;
+}
+
+body.template-page-policy .rte li,
+body.template-page-policy .shopify-policy__rte li {
+  margin-bottom: 8px;
+}
+
+body.template-page-policy .rte a,
+body.template-page-policy .shopify-policy__rte a {
+  text-decoration: underline;
+}
+
+body.template-page-policy .rte strong {
+  font-weight: 600;
+}
+
+/* Pro Series dark embed page */
+body.template-page-pro-series .main-content {
+  background: #000;
+  color: #fff;
+  padding: 0 0 48px;
+}
+
+body.template-page-pro-series .paperform-wrapper--dark {
+  min-height: 70vh;
+  border: none;
+  box-shadow: none;
+  background: #000;
+}
+
+body.template-page-pro-series .section-header__title {
+  color: #fff;
+}

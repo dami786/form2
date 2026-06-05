@@ -1,0 +1,184 @@
+/* Contact Us page (JerseyBird /pages/contact-us) */
+.text-center { text-align: center; }
+
+.page-width--narrow {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.template-page-contact .contact-page-main {
+  padding: 48px 0 72px;
+  background: #fff;
+}
+
+body.template-page-contact .page-content {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* GET IN TOUCH intro */
+.contact-intro {
+  margin-bottom: 48px;
+}
+
+.contact-intro__title {
+  font-family: var(--typeHeaderPrimary);
+  font-size: clamp(32px, 5vw, 44px);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  color: #000;
+}
+
+.contact-intro__rte {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--colorText);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.contact-intro__rte p {
+  margin-bottom: 14px;
+}
+
+.contact-intro__rte p:last-child {
+  margin-bottom: 0;
+}
+
+/* CONTACT US form heading */
+body.template-page-contact .section-header--contact {
+  margin-bottom: 32px;
+}
+
+body.template-page-contact .section-header--contact .section-header__title {
+  font-size: clamp(28px, 4vw, 36px);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+body.template-page-contact .contact-form-block.form-vertical {
+  text-align: center;
+}
+
+body.template-page-contact .contact-form-block label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: left;
+  color: #000;
+}
+
+body.template-page-contact .contact-form-block .input-full {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #000;
+  border-radius: 0;
+  margin-bottom: 22px;
+  font-size: 14px;
+  font-family: var(--typeBasePrimary);
+  background: #fff;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+body.template-page-contact .contact-form-block .input-full:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px #000;
+}
+
+body.template-page-contact .contact-form-block textarea.input-full {
+  min-height: 140px;
+}
+
+/* Name + Email two columns */
+.contact-form-block .grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.contact-form-block .grid--small {
+  margin-bottom: 0;
+}
+
+.contact-form-block .grid__item {
+  padding: 0 10px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  .contact-form-block .grid__item.medium-up--one-half {
+    width: 50%;
+  }
+}
+
+.contact-form__submit {
+  margin-top: 28px;
+  margin-bottom: 20px;
+}
+
+/* Angled red Send button */
+body.template-page-contact[data-button_style="angled"] .contact-form-block .btn {
+  position: relative;
+  display: inline-block;
+  border: 0;
+  margin: 0 10px;
+  padding: 13px 48px;
+  max-width: 94%;
+  min-width: 200px;
+  background-color: var(--colorBrand);
+  color: #fff;
+  font-family: var(--typeHeaderPrimary);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  z-index: 1;
+  transition: opacity 0.2s;
+}
+
+body.template-page-contact[data-button_style="angled"] .contact-form-block .btn:hover {
+  opacity: 0.88;
+}
+
+body.template-page-contact[data-button_style="angled"] .contact-form-block .btn:before,
+body.template-page-contact[data-button_style="angled"] .contact-form-block .btn:after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  transform: skew(-12deg);
+  background-color: inherit;
+  z-index: -1;
+}
+
+body.template-page-contact[data-button_style="angled"] .contact-form-block .btn:before {
+  left: -6px;
+}
+
+body.template-page-contact[data-button_style="angled"] .contact-form-block .btn:after {
+  right: -6px;
+}
+
+.contact-form__disclaimer {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--colorTextLight);
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-form__disclaimer a {
+  text-decoration: underline;
+}

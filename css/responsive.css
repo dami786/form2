@@ -1,0 +1,276 @@
+/* Mobile-first responsive (JerseyBird-style breakpoints: 768px) */
+
+@media (max-width: 768px) {
+  .page-width {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Toolbar: compact on mobile (social hidden; currency stays) */
+  .toolbar.small--hide {
+    display: block !important;
+  }
+  .toolbar__social {
+    display: none;
+  }
+  .toolbar {
+    padding: 8px 0;
+  }
+  .toolbar__content {
+    justify-content: flex-end;
+  }
+  .toolbar .disclosure-list {
+    max-width: calc(100vw - 40px);
+    right: 0;
+    left: auto;
+  }
+
+  /* Header */
+  .site-header .page-width {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .logo-img--mobile {
+    width: 56px;
+  }
+  .site-nav__icons {
+    gap: 4px;
+  }
+  .site-nav__icons .site-nav__link--icon {
+    min-width: 40px;
+    min-height: 40px;
+    padding: 8px;
+  }
+
+  /* Main content */
+  .main-content {
+    padding: 32px 0 48px;
+  }
+  .section-header__title {
+    font-size: 26px;
+    letter-spacing: 0.1em;
+  }
+  .page-width--form {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .paperform-wrapper {
+    min-height: 420px;
+    margin-left: -4px;
+    margin-right: -4px;
+  }
+
+  /* Sport / shop grids */
+  .sport-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .sport-card {
+    min-height: 120px;
+    padding: 12px 10px;
+  }
+  .shop-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .shop-card {
+    padding: 18px 10px;
+    font-size: 11px;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 40px 0 32px;
+  }
+  .footer-grid {
+    gap: 28px;
+    margin-bottom: 28px;
+  }
+  .footer__col--links {
+    padding-left: 0;
+  }
+  .footer__links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+  }
+  .footer__links li {
+    margin-bottom: 0;
+  }
+  .footer__newsletter-form {
+    max-width: 100%;
+  }
+  .footer__col p {
+    max-width: none;
+  }
+  .footer__bottom {
+    padding-top: 20px;
+  }
+  .footer__currency {
+    margin-bottom: 16px;
+  }
+  .footer__currency .disclosure-list {
+    left: 0;
+    right: 0;
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .footer__currency-btn {
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+  .payment-icons {
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  /* Footer collapsible (mobile accordion) */
+  .footer__collapsible[hidden] {
+    display: none !important;
+  }
+  .footer__title--toggle .icon {
+    transition: transform 0.2s;
+  }
+  .footer__title--toggle[aria-expanded="false"] .icon {
+    transform: rotate(-90deg);
+  }
+
+  /* Mobile nav drawer */
+  .drawer.drawer--nav {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .drawer--nav .drawer__fixed-header {
+    padding: 0;
+  }
+
+  .drawer--nav .drawer__header {
+    padding: 16px 20px;
+  }
+
+  .drawer--nav .drawer__scrollable {
+    padding: 0 16px 28px;
+    max-height: calc(100vh - 64px);
+    max-height: calc(100dvh - 64px);
+  }
+
+  .mobile-nav__link {
+    font-size: 0.95em;
+    letter-spacing: 0.1em;
+  }
+
+  .mobile-nav__sublist-link {
+    font-size: 12px;
+    padding: 9px 0;
+  }
+
+  .drawer-overlay {
+    z-index: 350;
+  }
+
+  .drawer.drawer--nav {
+    z-index: 450;
+  }
+
+  /* Drawers full width */
+  .drawer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .drawer--right.drawer--narrow {
+    max-width: 100%;
+  }
+
+  /* Search page */
+  .search-bar--page {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-bar--page .input-group-field {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .search-bar--page .input-group-btn {
+    width: 100%;
+  }
+  .search-bar--page .btn {
+    width: 100%;
+  }
+
+  /* Contact */
+  body.template-page-contact .contact-intro {
+    margin-bottom: 32px;
+  }
+  body.template-page-contact .contact-intro__title {
+    font-size: 28px;
+  }
+  body.template-page-contact .contact-intro__rte {
+    font-size: 14px;
+  }
+
+  /* Login */
+  body.template-customers-login .section-header__title {
+    font-size: 32px;
+  }
+  body.template-customers-login .form-vertical .one-half {
+    width: 100%;
+  }
+  body.template-customers-login .form-vertical .text-right {
+    text-align: left;
+    margin-bottom: 4px;
+  }
+
+  /* Policy pages */
+  body.template-page-policy .section-header__title {
+    font-size: 26px;
+  }
+  body.template-page-policy .rte,
+  body.template-page-policy .shopify-policy__rte {
+    font-size: 14px;
+  }
+
+  /* Currency overlay list on mobile toolbar */
+  .toolbar .faux-select {
+    font-size: 11px;
+    max-width: 55vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .toolbar .disclosure-list__label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 42vw;
+  }
+
+  /* Header search overlay */
+  .site-header__search-container .page-width {
+    padding: 0 16px;
+  }
+  .site-header__search-input {
+    font-size: 16px;
+  }
+
+  /* Disclosure lists don't overflow viewport */
+  .disclosure-list {
+    max-height: 50vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__links {
+    grid-template-columns: 1fr;
+  }
+  .sport-grid {
+    gap: 8px;
+  }
+}
+
+@media (min-width: 769px) {
+  .header-item--left .site-nav__link--icon.js-search-open {
+    display: none;
+  }
+}

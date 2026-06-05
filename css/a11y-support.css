@@ -1,0 +1,37 @@
+/* Smart Accessibility – match JerseyBird (support classes from live theme) */
+[x-sa-cloak] { display: none !important; }
+
+.smart-accessibility-widget {
+  z-index: 2147483000 !important;
+}
+
+.smart-accessibility-widget .sa-widget__cta {
+  z-index: 2147483001 !important;
+}
+
+.smart-accessibility-widget .sa-widget__wrapper {
+  z-index: 2147483002 !important;
+}
+
+.sa-big-cursor {
+  cursor: url(https://cdn.shopify.com/extensions/019d9b3d-db05-79e1-ad33-4ab8d9a31d79/smart-accessibility-1-24/assets/big-cursor.svg), auto;
+}
+
+.sa-no-transition * {
+  transition-timing-function: step-end !important;
+  transition-duration: 0s !important;
+  animation-timing-function: step-end !important;
+  animation-iteration-count: 1 !important;
+  animation-duration: 0s !important;
+}
+
+.sa-hide-images * {
+  background-image: none !important;
+}
+
+.sa-low-saturation { filter: saturate(0.5); }
+.sa-high-saturation { filter: saturate(2); }
+.sa-grayscale-saturation { filter: grayscale(1); }
+.sa-inverted-contrast { filter: invert(1); }
+.sa-low-contrast { filter: contrast(0.5); }
+.sa-high-contrast { filter: contrast(2); }

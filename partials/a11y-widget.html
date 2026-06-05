@@ -1,0 +1,682 @@
+<div
+    data-shop="shopjerseybird.myshopify.com"
+    class="smart-accessibility-widget "
+    x-sa-bind:class="settings.position"
+x-sa-show="settings.enable"
+    x-sa-trap="openWidget"
+    x-sa-on:keyup.tab.window="enableKeyboardNavigation = true"
+    x-sa-on:keyup.escape.window="openWidget = false"
+    x-sa-data="sa_accessibility">
+    <div class="smart-accessibility-widget__overlay sa-no-track" x-sa-show="openWidget" x-sa-on:click="openWidget = false"></div>
+    <div
+        x-sa-bind:class="settings.position + ' ' + settings.icon_size"
+        x-sa-show="!settings.hide_trigger"
+        x-sa-bind:style="{
+            borderColor: settings.brand_color,
+        }"
+        class="sa-widget__cta">
+        <button type="button" x-sa-on:click="openWidget = !openWidget"
+            x-sa-bind:style="getBranding"
+            :aria-label="settings.t_enable_accessibility"
+            class="widget-icon sa-no-track" :title="settings.t_enable_accessibility">
+
+            <svg x-sa-show="openWidget" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="sa-icon sa-icon-x">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+
+            <span x-sa-show="!openWidget" style="height: 24px;" class="sa-no-track">
+
+                <svg x-sa-show="settings.icon == 1" xmlns="http://www.w3.org/2000/svg" class="sa-icon sa-icon-accessibility" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"   stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <circle cx="11" cy="5" r="2" />
+                    <polyline points="11 7 11 15 15 15 19 20" />
+                    <line x1="11" y1="11" x2="16" y2="11" />
+                    <path d="M7 11.5a5 5 0 1 0 6 7.5" />
+                </svg>
+
+                <svg x-sa-show="settings.icon == 2" xmlns="http://www.w3.org/2000/svg" class="sa-icon sa-icon-tabler icon-tabler-accessible" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M10 16.5l2 -3l2 3m-2 -3v-2l3 -1m-6 0l3 1" />
+                    <circle cx="12" cy="7.5" r=".5" fill="currentColor" />
+                </svg>
+
+                <svg x-sa-show="settings.icon == 3" xmlns="http://www.w3.org/2000/svg" class="sa-icon sa-icon-tabler icon-tabler-disabled-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <circle cx="17" cy="6" r="2" />
+                    <path d="M9 11a5 5 0 1 0 3.95 7.95" />
+                    <path d="M19 20l-4 -5h-4l3 -5l-4 -3l-4 1" />
+                </svg>
+
+                <svg x-sa-show="settings.icon == 4" class="sa-icon sa-icon-tabler icon-tabler-disabled-4" width="28" height="28" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" stroke-width="1.5" stroke="currentColor" style="fill: currentColor;" fill="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M256,112a56,56,0,1,1,56-56A56.06,56.06,0,0,1,256,112Z"/>
+                    <path d="M432,112.8l-.45.12h0l-.42.13c-1,.28-2,.58-3,.89-18.61,5.46-108.93,30.92-172.56,30.92-59.13,0-141.28-22-167.56-29.47a73.79,73.79,0,0,0-8-2.58c-19-5-32,14.3-32,31.94,0,17.47,15.7,25.79,31.55,31.76v.28l95.22,29.74c9.73,3.73,12.33,7.54,13.6,10.84,4.13,10.59.83,31.56-.34,38.88l-5.8,45L150.05,477.44q-.15.72-.27,1.47l-.23,1.27h0c-2.32,16.15,9.54,31.82,32,31.82,19.6,0,28.25-13.53,32-31.94h0s28-157.57,42-157.57,42.84,157.57,42.84,157.57h0c3.75,18.41,12.4,31.94,32,31.94,22.52,0,34.38-15.74,32-31.94-.21-1.38-.46-2.74-.76-4.06L329,301.27l-5.79-45c-4.19-26.21-.82-34.87.32-36.9a1.09,1.09,0,0,0,.08-.15c1.08-2,6-6.48,17.48-10.79l89.28-31.21a16.9,16.9,0,0,0,1.62-.52c16-6,32-14.3,32-31.93S451,107.81,432,112.8Z"/>
+                </svg>
+
+            </span>
+            <span class="sa-sr-only sa-no-track" x-sa-text="settings.t_enable_accessibility">
+                Enable accessibility
+            </span>
+        </button>
+    </div>
+
+    <div class="sa-widget__wrapper sa-no-track"
+        x-sa-bind:class="settings.position"
+        x-sa-bind:style="{
+            borderColor: settings.brand_color,
+        }"
+        x-sa-show="openWidget">
+
+        <div
+            x-sa-bind:style="getBranding"
+            class="sa-widget__header sa-no-track">
+            <div class="sa-widget__title sa-no-track" x-sa-text="settings.title">
+                Accessibility
+            </div>
+            <button type="button" x-sa-ref="close_btn" x-sa-on:click="openWidget = false"
+                :aria-label="settings.t_close_accessibility"
+                class="sa-widget__close sa-no-track">
+                <svg xmlns="http://www.w3.org/2000/svg" class="sa-icon sa-icon-close" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <title>Close icon</title>
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+
+                <span class="sa-sr-only" x-sa-text="settings.t_close_accessibility">
+                    Close accessibility widget
+                </span>
+            </button>
+        </div>
+
+        <div class="sa-widget__top sa-button--group sa-no-track">
+
+            <button type="button"
+                :aria-label="settings.t_reset_all"
+                x-sa-show="settings.show_reset_all"
+                x-sa-text="settings.t_reset_all"
+                x-sa-bind:style="{ '--saShadowColor': settings.brand_color, borderColor: settings.brand_color }"
+                x-sa-on:click="resetAll(); $dispatch('sa-reset-all')"
+                class="sa-relative sa-no-track sa-button">
+                Reset All
+            </button>
+
+            <button
+                x-sa-show="settings.show_statement"
+                x-sa-on:click="toggleStatement = !toggleStatement"
+                x-sa-bind:style="{ '--saShadowColor': settings.brand_color, borderColor: settings.brand_color }"
+                :aria-label="settings.t_statement"
+                type="button"
+                class="sa-relative sa-no-track sa-button"
+                x-sa-bind:class="{ 'active' : toggleStatement }"
+                >
+                <svg class="sa-svg-checked" x-sa-bind:style="toggleStatement && { backgroundColor: settings.brand_color }" viewBox="0 0 20 20" fill="#fff">
+                    <title>Checked mark</title>
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span x-sa-text="settings.t_statement" class="sa-no-track">
+                    Statement
+                </span>
+            </button>
+
+        </div>
+
+        <div x-sa-show="toggleStatement" class="sa-widget__statement sa-no-track">
+            <div x-sa-html="(toggleStatement) ? settings.statement : ''"></div>
+        </div>
+
+        <div x-sa-show="!toggleStatement" class="sa-widget__main sa-no-track">
+
+            <select x-sa-show="settings.show_language" x-sa-model="language.currentLanguage" name="sa_language" class="widget__feature sa-no-track sa-full-width" aria-label="Change language">
+                <option value="auto">Language</option>
+                <option value="en">English</option>
+                <option value="fr">French</option>
+                <option value="es">Spanish</option>
+                <option value="de">German</option>
+                <option value="it">Italian</option>
+                <option value="pt">Portuguese</option>
+                <option value="zh">Chinese</option>
+                <option value="ja">Japanese</option>
+                <option value="ar">Arabic</option>
+                <option value="he">Hebrew</option>
+                <option value="fa">Persian</option>
+            </select>
+
+            <button
+                x-sa-show="settings.show_font_size"
+                x-sa-data="{ level: $persist(0).as('font-size-level') }"
+                x-sa-on:sa-reset-all.window="level = 0"
+                :aria-label="settings.t_font_size"
+                x-sa-bind:style="{ '--saShadowColor': settings.brand_color, borderColor: settings.brand_color }"
+                x-sa-on:click="() => { if(level < 4) { level++; adjustFontSize(level) } else { level = 0; resetFontSize() } }"
+                class="widget__feature sa-no-track sa-relative sa-button" x-sa-bind:class="{ 'active' : font.isInitialised }" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" class="sa-icon sa-icon-type sa-mx-auto">
+                    <title>Adjust font size</title>
+                    <polyline points="4 7 4 4 20 4 20 7"></polyline>
+                    <line x1="9" y1="20" x2="15" y2="20"></line>
+                    <line x1="12" y1="4" x2="12" y2="20"></line>
+                </svg>
+
+                <svg class="sa-svg-checked" x-sa-bind:style="font.isInitialised && { backgroundColor: settings.brand_color }" viewBox="0 0 20 20" fill="#fff">
+                    <title>Checked mark</title>
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span class="sa-no-track" x-sa-text="settings.t_font_size"> Font size</span>
+                <div class="sa-bar sa-no-track">
+                    <div x-sa-show="level > 0" class="sa-bar__flex">
+                        <span class="sa-no-track sa-bar__flex-bar" x-sa-bind:style="level > 0 && { backgroundColor: settings.brand_color }"></span>
+                        <span class="sa-no-track sa-bar__flex-bar" x-sa-bind:style="level > 1 && { backgroundColor: settings.brand_color }"></span>
+                        <span class="sa-no-track sa-bar__flex-bar" x-sa-bind:style="level > 2 && { backgroundColor: settings.brand_color }"></span>
+                        <span class="sa-no-track sa-bar__flex-bar" x-sa-bind:style="level > 3 && { backgroundColor: settings.brand_color }"></span>
+                    </div>
+                </div>
+
+            </button>
+
+            <button
+                x-sa-show="settings.show_screen_reader"
+                x-sa-on:click="toggleScreenReader"
+                :aria-label="settings.t_screen_reader"
+                x-sa-bind:style="{ '--saShadowColor': settings.brand_color, borderColor: settings.brand_color }"
+                class="widget__feature sa-no-track sa-relative sa-button"
+                x-sa-bind:class="{ 'active' : screenReader.isInitialised }"
+                type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" class="sa-icon sa-icon-mic sa-mx-auto">
+                    <title>Screen Reader</title>
+                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                    <line x1="8" y1="23" x2="16" y2="23"></line>
+                </svg>
+                <svg class="sa-svg-checked" x-sa-bind:style="screenReader.isInitialised && { backgroundColor: settings.brand_color }" viewBox="0 0 20 20" fill="#fff">
+                    <title>Checked mark</title>
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span class="sa-no-track" x-sa-text="settings.t_screen_reader"> Screen Reader</span>
+            </button>
+
+            <button
+                x-sa-show="settings.show_contrast"
+                x-sa-data="{ level: $persist(0).as('contrast-level') }"
+                x-sa-on:sa-reset-all.window="level = 0"
+                :aria-label="settings.t_contrast"
+                x-sa-on:click="() => { if(level < 3) { level++; toggleContrast(level) } else { level = 0; resetContrast() } }"
+                x-sa-bind:style="{ '--saShadowColor': settings.brand_color, borderColor: settings.brand_color }"
+                class="widget__feature sa-no-track sa-relative sa-button"
+                x-sa-bind:class="{ 'active' : contrast.isInitialised }"
+                type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sa-icon sa-icon-contrast sa-mx-auto">
+                    <title>Contrast</title>
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 17a5 5 0 0 0 0 -10v10" />
+                </svg>
+
+                <svg class="sa-svg-checked" x-sa-bind:style="contrast.isInitialised && { backgroundColor: settings.brand_color }" viewBox="0 0 20 20" fill="#fff">
+                    <title>Checked mark</title>
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+
+                <span class="sa-no-track" x-sa-show="level == 0" x-sa-text="settings.t_contrast"> Contrast</span>
+                <span class="sa-no-track" x-sa-show="level == 1" x-sa-text="settings.t_inverted"> Inverted</span>
+                <span class="sa-no-track" x-sa-show="level == 2" x-sa-text="settings.t_low_contrast"> Low Contrast</span>
+                <span class="sa-no-track" x-sa-show="level == 3" x-sa-text="settings.t_high_contrast"> High Contrast</span>
+
+                <div class="sa-bar sa-no-track">
+                    <div x-sa-show="level > 0" class="sa-bar__flex">
+                        <span class="sa-no-track sa-bar__flex-bar" x-sa-bind:style="level > 0 && { backgroundColor: settings.brand_color }"></span>
+                        <span class="sa-no-track sa-bar__flex-bar" x-sa-bind:style="level > 1 && { backgroundColor: settings.brand_color }"></span>
+                        <span class="sa-no-track sa-bar__flex-bar" x-sa-bind:style="level > 2 && { backgroundColor: settings.brand_color }"></span>
+                    </div>
+                </div>
+
+            </button>
+
+            <button
+                x-sa-show="settings.show_highlight_links"
+                x-sa-on:click="toggleLinkHighlights"
+                :aria-label="settings.t_highlight_links"
+                x-sa-bind:style="{ '--saShadowColor': settings.brand_color, borderColor: settings.brand_color }"
+                class="widget__feature sa-no-track sa-relative sa-button" x-sa-bind:class="{ 'active' : linkHighlights }" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="sa-icon sa-icon-type sa-mx-auto">
+                    <title>Highlight Links</title>
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+
+                <svg class="sa-svg-checked" x-sa-bind:style="linkHighlights && { backgroundColor: settings.brand_color }" viewBox="0 0 20 20" fill="#fff">
+                    <title>Checked mark</title>
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span class="sa-no-track" x-sa-text="settings.t_highlight_links"> Highlight Links</span>
+            </button>
+
+            <button
+                x-sa-show="settings.show_cursor"
+                x-sa-on:click="toggleBigCursor"
+                :aria-label="settings.t_cursor"
+                x-sa-bind:style="{ '--saShadowColor': settings.brand_color, borderColor: settings.brand_color }"
+                class="widget__feature sa-no-track sa-relative sa-button"
+                x-sa-bind:class="{ 'active' : enableBigCursor }" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sa-icon sa-icon-mouse-pointer sa-mx-auto">
+                    <title>Change Cursor</title>
+                    <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"></path>
+                    <path d="M13 13l6 6"></path>
+                </svg>
+
+                <svg class="sa-svg-checked" x-sa-bind:style="enableBigCursor && { backgroundColor: settings.brand_color }" viewBox="0 0 20 20" fill="#fff">
+                    <title>Checked mark</title>
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+
+                <span class="sa-no-track" x-sa-text="settings.t_cursor"> Cursor</span>
+
+            </button>
+
+            <button
+                x-sa-show="settings.show_text_align"
+                x-sa-data="{
+                    level: $persist(0).as('text-align-level'),
+                }"
+                :aria-label="settings.t_text_align"
+                x-sa-on:sa-reset-all.window="level = 0"
+                x-sa-on:click="() => { if(level < 3) { level++; toggleTextAlign(level) } else { level = 0; resetTextAlign() } }"
+                x-sa-bind:style="{ '--saShadowColor': settings.brand_color, borderColor: settings.brand_color }"
+                class="widget__feature sa-no-track sa-relative sa-button"
+                x-sa-bind:class="{ 'active' : textAlign.isInitialised }" type="button">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" x-sa-show="level == 0 || level == 2" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sa-icon sa-icon-align sa-mx-auto">
+                        <title>Text align</title>
+                        <line x1="18" y1="10" x2="6" y2="10"></line>
+                        <line x1="21" y1="6" x2="3" y2="6"></line>
+                        <line x1="21" y1="14" x2="3" y2="14"></line>
+                        <line x1="18" y1="18" x2="6" y2="18"></line>
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" x-sa-show="level == 1" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sa-icon sa-icon-align sa-mx-auto">
+                        <title>Text left</title>
+                        <line x1="17" y1="10" x2="3" y2="10"></line>
+                        <line x1="21" y1="6" x2="3" y2="6"></line>
+                        <line x1="21" y1="14" x2="3" y2="14"></line>
+                        <line x1="17" y1="18" x2="3" y2="18"></line>
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" x-sa-show="level == 3" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sa-icon sa-icon-align sa-mx-auto">
+                        <title>Text right</title>
+                        <line x1="21" y1="10" x2="7" y2="10"></line>
+                        <line x1="21" y1="6" x2="3" y2="6"></line>
+                        <line x1="21" y1="14" x2="3" y2="14"></line>
+                        <line x1="21" y1="18" x2="7" y2="18"></line>
+                    </svg>
+
+                    <svg class="sa-svg-checked" x-sa-bind:style="textAlign.isInitialised && { backgroundColor: settings.brand_color }" viewBox="0 0 20 20" fill="#fff">
+                        <title>Checked mark</title>
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="sa-no-track">
+                        <span class="sa-no-track" x-sa-show="level == 0" x-sa-text="settings.t_text_align"> Text Align </span>
+                        <span class="sa-no-track" x-sa-show="level == 1" x-sa-text="settings.t_text_left"> Text Left </span>
+                        <span class="sa-no-track" x-sa-show="level == 2" x-sa-text="settings.t_text_center"> Text Center </span>
+                        <span class="sa-no-track" x-sa-show="level == 3" x-sa-text="settings.t_text_right"> Text Right </span>
+                    </span>
+
+                    <div class="sa-bar sa-no-track">
+                        <div x-sa-show="level > 0" class="sa-bar__flex">
+                            <span class="sa-no-track sa-bar__flex-bar" x-sa-bind:style="level > 0 && { backgroundColor: settings.brand_color }"></span>
+                            <span class="sa-no-track sa-bar__flex-bar" x-sa-bind:style="level > 1 && { backgroundColor: settings.brand_color }"></span>
+                            <span class="sa-no-track sa-bar__flex-bar" x-sa-bind:style="level > 2 && { backgroundColor: settings.brand_color }"></span>
+                       </div>
+                    </div>
+            </button>
+
+            <button
+                x-sa-show="settings.show_saturation"
+                x-sa-data="{ level: $persist(0).as('saturation-level') }"
+                x-sa-on:sa-reset-all.window="level = 0"
+                :aria-label="settings.t_saturation"
+                x-sa-on:click="() => { if(level < 3) { level++; toggleSaturation(level) } else { level = 0; resetSaturation() } }"
+                x-sa-bind:style="{ '--saShadowColor': settings.brand_color, borderColor: settings.brand_color }"
+                class="widget__feature sa-no-track sa-relative sa-button"
+                x-sa-bind:class="{ 'active' : saturation.isInitialised }" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 16 16" fill="currentColor" class="sa-icon sa-icon-droplet sa-mx-auto" style="fill: currentColor">
+                        <title>Saturation icon</title>
+                        <path fill-rule="evenodd" d="M7.21.8C7.69.295 8 0 8 0c.109.363.234.708.371 1.038.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8zm.413 1.021A31.25 31.25 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10a5 5 0 0 0 10 0c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z"/>
+                        <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448z"/>
+                    </svg>
+
+                    <svg class="sa-svg-checked" x-sa-bind:style="saturation.isInitialised && { backgroundColor: settings.brand_color }" viewBox="0 0 20 20" fill="#fff">
+                        <title>Checked mark</title>
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+
+                    <span class="sa-no-track" x-sa-show="level == 0" x-sa-text="settings.t_saturation"> Saturation</span>
+                    <span class="sa-no-track" x-sa-show="level == 1" x-sa-text="settings.t_low_saturation"> Low Saturation</span>
+                    <span class="sa-no-track" x-sa-show="level == 2" x-sa-text="settings.t_high_saturation"> High Saturation</span>
+                    <span class="sa-no-track" x-sa-show="level == 3" x-sa-text="settings.t_grayscale"> Grayscale</span>
+
+                    <div class="sa-bar sa-no-track">
+                        <div x-sa-show="level > 0" class="sa-bar__flex">
+                            <span class="sa-no-track sa-bar__flex-bar" x-sa-bind:style="level > 0 && { backgroundColor: settings.brand_color }"></span>
+                            <span class="sa-no-track sa-bar__flex-bar" x-sa-bind:style="level > 1 && { backgroundColor: settings.brand_color }"></span>
+                            <span class="sa-no-track sa-bar__flex-bar" x-sa-bind:style="level > 2 && { backgroundColor: settings.brand_color }"></span>
+                        </div>
+                    </div>
+            </button>
+
+            <button
+                x-sa-show="settings.show_line_height"
+                x-sa-data="{
+                    level: $persist(0).as('line-height-level'),
+                }"
+                x-sa-on:sa-reset-all.window="level = 0"
+                :aria-label="settings.t_line_height"
+                x-sa-on:click="() => { if(level < 4) { level++; toggleLineHeight(level) } else { level = 0; resetLineHeight() } }"
+                x-sa-bind:style="{ '--saShadowColor': settings.brand_color, borderColor: settings.brand_color }"
+                class="widget__feature sa-no-track sa-relative sa-button" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sa-icon sa-icon-line-height sa-mx-auto">
+                        <title>Line Height</title>
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <polyline points="3 8 6 5 9 8" />
+                        <polyline points="3 16 6 19 9 16" />
+                        <line x1="6" y1="5" x2="6" y2="19" />
+                        <line x1="13" y1="6" x2="20" y2="6" />
+                        <line x1="13" y1="12" x2="20" y2="12" />
+                        <line x1="13" y1="18" x2="20" y2="18" />
+                    </svg>
+                    <svg class="sa-svg-checked" x-sa-bind:style="lineHeight.isInitialised && { backgroundColor: settings.brand_color }" viewBox="0 0 20 20" fill="#fff">
+                        <title>Checked mark</title>
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="sa-no-track" x-sa-text="settings.t_line_height"> Line Height</span>
+
+                    <div class="sa-bar sa-no-track">
+                        <div x-sa-show="level > 0" class="sa-bar__flex">
+                            <span class="sa-no-track sa-bar__flex-bar" x-sa-bind:style="level > 0 && { backgroundColor: settings.brand_color }"></span>
+                            <span class="sa-no-track sa-bar__flex-bar" x-sa-bind:style="level > 1 && { backgroundColor: settings.brand_color }"></span>
+                            <span class="sa-no-track sa-bar__flex-bar" x-sa-bind:style="level > 2 && { backgroundColor: settings.brand_color }"></span>
+                            <span class="sa-no-track sa-bar__flex-bar" x-sa-bind:style="level > 3 && { backgroundColor: settings.brand_color }"></span>
+                        </div>
+                    </div>
+
+            </button>
+
+            <button
+                x-sa-show="settings.show_letter_spacing"
+                x-sa-data="{
+                    level: $persist(0).as('letter-spacing-level'),
+                }"
+                x-sa-on:sa-reset-all.window="level = 0"
+                :aria-label="settings.t_letter_spacing"
+                x-sa-on:click="() => { if(level < 4) { level++; toggleLetterSpacing(level) } else { level = 0; resetLetterSpacing() } }"
+                x-sa-bind:style="{ '--saShadowColor': settings.brand_color, borderColor: settings.brand_color }"
+                class="widget__feature sa-no-track sa-relative sa-button"
+                x-sa-bind:class="{ 'active' : letterSpacing.isInitialised }"
+                type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sa-icon sa-icon-letter-spacing sa-mx-auto">
+                        <title>Letter Spacing</title>
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M5 12v-5.5a2.5 2.5 0 0 1 5 0v5.5m0 -4h-5" />
+                        <path d="M13 4l3 8l3 -8" />
+                        <path d="M5 18h14" />
+                        <path d="M17 20l2 -2l-2 -2" />
+                        <path d="M7 16l-2 2l2 2" />
+                    </svg>
+
+                    <svg class="sa-svg-checked" x-sa-bind:style="letterSpacing.isInitialised && { backgroundColor: settings.brand_color }" viewBox="0 0 20 20" fill="#fff">
+                        <title>Checked mark</title>
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+
+                    <span class="sa-no-track" x-sa-text="settings.t_letter_spacing">Letter Spacing</span>
+                    <div class="sa-bar sa-no-track">
+                        <div x-sa-show="level > 0" class="sa-bar__flex">
+                            <span class="sa-no-track sa-bar__flex-bar" x-sa-bind:style="level > 0 && { backgroundColor: settings.brand_color }"></span>
+                            <span class="sa-no-track sa-bar__flex-bar" x-sa-bind:style="level > 1 && { backgroundColor: settings.brand_color }"></span>
+                            <span class="sa-no-track sa-bar__flex-bar" x-sa-bind:style="level > 2 && { backgroundColor: settings.brand_color }"></span>
+                            <span class="sa-no-track sa-bar__flex-bar" x-sa-bind:style="level > 3 && { backgroundColor: settings.brand_color }"></span>
+                        </div>
+                    </div>
+            </button>
+
+            <button
+                x-sa-show="settings.show_stop_animations"
+                x-sa-on:click="toggleStopAnimations"
+                :aria-label="settings.t_stop_animation"
+                x-sa-bind:style="{ '--saShadowColor': settings.brand_color, borderColor: settings.brand_color }"
+                class="widget__feature sa-no-track sa-relative sa-button"
+                x-sa-bind:class="{ 'active' : enableStopAnimations }"
+                type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sa-icon sa-icon-align sa-mx-auto">
+                    <title>Stop Animations</title>
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="10" y1="15" x2="10" y2="9"></line>
+                    <line x1="14" y1="15" x2="14" y2="9"></line>
+                    </svg>
+                    <svg class="sa-svg-checked" x-sa-bind:style="enableStopAnimations && { backgroundColor: settings.brand_color }" viewBox="0 0 20 20" fill="#fff">
+                        <title>Checked mark</title>
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="sa-no-track" x-sa-text="settings.t_stop_animation">Stop Animations</span>
+            </button>
+
+            <button
+                x-sa-show="settings.show_mute_sounds"
+                x-sa-on:click="toggleMuteSounds"
+                :aria-label="settings.t_mute_sounds"
+                x-sa-bind:style="{ '--saShadowColor': settings.brand_color, borderColor: settings.brand_color }"
+                class="widget__feature sa-no-track sa-relative sa-button"
+                x-sa-bind:class="{ 'active' : enableMuteSounds }"
+                type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sa-icon sa-icon-align sa-mx-auto">
+                        <title>Mute sounds</title>
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M6 10c0 -1.146 .277 -2.245 .78 -3.219m1.792 -2.208a7 7 0 0 1 10.428 9.027a10 10 0 0 1 -.633 .762m-2.045 1.96a8 8 0 0 0 -1.322 2.278a4.5 4.5 0 0 1 -6.8 1.4" />
+                        <path d="M11.42 7.414a3 3 0 0 1 4.131 4.13" />
+                        <line x1="3" y1="3" x2="21" y2="21" />
+                    </svg>
+                    <svg class="sa-svg-checked"
+                        x-sa-bind:style="enableMuteSounds && { backgroundColor: settings.brand_color }" viewBox="0 0 20 20" fill="#fff">
+                        <title>Checked mark</title>
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="sa-no-track" x-sa-text="settings.t_mute_sounds">Mute Sounds</span>
+            </button>
+
+            <button
+                x-sa-show="settings.show_hide_images"
+                x-sa-on:click="toggleHideImages"
+                :aria-label="settings.t_hide_images"
+                x-sa-bind:style="{ '--saShadowColor': settings.brand_color, borderColor: settings.brand_color }"
+                class="widget__feature sa-no-track sa-relative sa-button"
+                x-sa-bind:class="{ 'active' : hideImages }"
+                type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sa-icon sa-icon-align sa-mx-auto">
+                        <title>Hide Image</title>
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <line x1="3" y1="3" x2="21" y2="21" />
+                        <line x1="15" y1="8" x2="15.01" y2="8" />
+                        <path d="M19.121 19.122a3 3 0 0 1 -2.121 .878h-10a3 3 0 0 1 -3 -3v-10c0 -.833 .34 -1.587 .888 -2.131m3.112 -.869h9a3 3 0 0 1 3 3v9" />
+                        <path d="M4 15l4 -4c.928 -.893 2.072 -.893 3 0l5 5" />
+                        <path d="M16.32 12.34c.577 -.059 1.162 .162 1.68 .66l2 2" />
+                    </svg>
+                    <svg class="sa-svg-checked"
+                        x-sa-bind:style="hideImages && { backgroundColor: settings.brand_color }" viewBox="0 0 20 20" fill="#fff">
+                        <title>Checked mark</title>
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="sa-no-track" x-sa-text="settings.t_hide_images">Hide Images</span>
+            </button>
+
+            <div x-sa-show="settings.show_text_colors" class="widget__feature sa-no-track sa-text-center sa-relative sa-widget__col-2">
+                <div class="sa-no-track sa-text" x-sa-text="settings.t_text_colors">Adjust text colors</div>
+                <svg class="sa-svg-checked"
+                        x-sa-bind:style="textColor.isInitialised && { backgroundColor: settings.brand_color }" viewBox="0 0 20 20" fill="#fff">
+                        <title>Checked mark</title>
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <div class="sa-widget__flex sa-widget__gap sa-widget__justify-evenly sa-no-track">
+                    <button class="sa-button sa-widget__swatch sa-bg-red"
+                        x-sa-bind:class="{ 'sa-active' : isTextColor('#dc2626') }"
+                        x-sa-on:click="setTextColor('#dc2626')"
+                        aria-label="Change text color to red"
+                        title="Change text color to red"></button>
+                    <button class="sa-button sa-widget__swatch sa-bg-blue"
+                        x-sa-bind:class="{ 'sa-active' : isTextColor('#2563eb') }"
+                        x-sa-on:click="setTextColor('#2563eb')"
+                        aria-label="Change text color to blue"
+                        title="Change text color to blue"></button>
+                    <button class="sa-button sa-widget__swatch sa-bg-green "
+                        x-sa-bind:class="{ 'sa-active' : isTextColor('#16a34a') }"
+                        x-sa-on:click="setTextColor('#16a34a')"
+                        aria-label="Change text color to green"
+                        title="Change text color to green"></button>
+                    <button class="sa-button sa-widget__swatch sa-bg-purple "
+                        x-sa-bind:class="{ 'sa-active' : isTextColor('#9333ea') }"
+                        x-sa-on:click="setTextColor('#9333ea')"
+                        aria-label="Change text color to purple"
+                        title="Change text color to purple"></button>
+                    <button class="sa-button sa-widget__swatch sa-bg-orange "
+                        x-sa-bind:class="{ 'sa-active' : isTextColor('#ea580c') }"
+                        x-sa-on:click="setTextColor('#ea580c')"
+                        aria-label="Change text color to orange"
+                        title="Change text color to orange"></button>
+                    <button class="sa-button sa-widget__swatch sa-bg-teal "
+                        x-sa-bind:class="{ 'sa-active' : isTextColor('#0d9488') }"
+                        x-sa-on:click="setTextColor('#0d9488')"
+                        aria-label="Change text color to teal"
+                        title="Change text color to teal"></button>
+                    <button class="sa-button sa-widget__swatch sa-bg-black "
+                        x-sa-bind:class="{ 'sa-active' : isTextColor('#000') }"
+                        x-sa-on:click="setTextColor('#000')"
+                        aria-label="Change text color to black"
+                        title="Change text color to black"></button>
+                    <button class="sa-button sa-widget__swatch sa-bg-white "
+                        x-sa-bind:class="{ 'sa-active' : isTextColor('#fff') }"
+                        x-sa-on:click="setTextColor('#fff')"
+                        aria-label="Change text color to white"
+                        title="Change text color to white"></button>
+                </div>
+                <button class="sa-widget__reset-btn sa-button sa-no-track"
+                x-sa-on:click="resetTextColor()"
+                x-sa-text="settings.t_reset">Reset</button>
+            </div>
+
+            <div x-sa-show="settings.show_heading_colors" class="widget__feature sa-no-track sa-text-center sa-relative sa-widget__col-2">
+                <div class="sa-no-track sa-text" x-sa-text="settings.t_heading_colors">Adjust heading colors</div>
+                <svg class="sa-svg-checked"
+                        x-sa-bind:style="headingColor.isInitialised && { backgroundColor: settings.brand_color }" viewBox="0 0 20 20" fill="#fff">
+                        <title>Checked mark</title>
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <div class="sa-widget__flex sa-widget__gap sa-widget__justify-evenly sa-no-track">
+                    <button class="sa-button sa-widget__swatch sa-bg-red"
+                        x-sa-bind:class="{ 'sa-active' : isHeadingColor('#dc2626') }"
+                        x-sa-on:click="setHeadingColor('#dc2626')"
+                        aria-label="Change heading color to red"
+                        title="Change heading color to red"></button>
+                    <button class="sa-button sa-widget__swatch sa-bg-blue"
+                        x-sa-bind:class="{ 'sa-active' : isHeadingColor('#2563eb') }"
+                        x-sa-on:click="setHeadingColor('#2563eb')"
+                        aria-label="Change heading color to blue"
+                        title="Change heading color to blue"></button>
+                    <button class="sa-button sa-widget__swatch sa-bg-green "
+                        x-sa-bind:class="{ 'sa-active' : isHeadingColor('#16a34a') }"
+                        x-sa-on:click="setHeadingColor('#16a34a')"
+                        aria-label="Change heading color to green"
+                        title="Change heading color to green"></button>
+                    <button class="sa-button sa-widget__swatch sa-bg-purple "
+                        x-sa-bind:class="{ 'sa-active' : isHeadingColor('#9333ea') }"
+                        x-sa-on:click="setHeadingColor('#9333ea')"
+                        aria-label="Change heading color to purple"
+                        title="Change heading color to purple"></button>
+                    <button class="sa-button sa-widget__swatch sa-bg-orange "
+                        x-sa-bind:class="{ 'sa-active' : isHeadingColor('#ea580c') }"
+                        x-sa-on:click="setHeadingColor('#ea580c')"
+                        aria-label="Change heading color to orange"
+                        title="Change heading color to orange"></button>
+                    <button class="sa-button sa-widget__swatch sa-bg-teal "
+                        x-sa-bind:class="{ 'sa-active' : isHeadingColor('#0d9488') }"
+                        x-sa-on:click="setHeadingColor('#0d9488')"
+                        aria-label="Change heading color to teal"
+                        title="Change heading color to teal"></button>
+                    <button class="sa-button sa-widget__swatch sa-bg-black "
+                        x-sa-bind:class="{ 'sa-active' : isHeadingColor('#000') }"
+                        x-sa-on:click="setHeadingColor('#000')"
+                        aria-label="Change heading color to black"
+                        title="Change heading color to black"></button>
+                    <button class="sa-button sa-widget__swatch sa-bg-white "
+                        x-sa-bind:class="{ 'sa-active' : isHeadingColor('#fff') }"
+                        x-sa-on:click="setHeadingColor('#fff')"
+                        aria-label="Change heading color to white"
+                        title="Change heading color to white"></button>
+                </div>
+                <button class="sa-widget__reset-btn sa-button sa-no-track"
+                x-sa-on:click="resetHeadingColor()"
+                x-sa-text="settings.t_reset">Reset</button>
+            </div>
+
+            <div x-sa-show="settings.show_bg_colors" class="widget__feature sa-no-track sa-text-center sa-relative sa-widget__col-2">
+                <div class="sa-no-track sa-text" x-sa-text="settings.t_bg_colors">Adjust background colors</div>
+                <svg class="sa-svg-checked"
+                        x-sa-bind:style="bgColor.isInitialised && { backgroundColor: settings.brand_color }" viewBox="0 0 20 20" fill="#fff">
+                        <title>Checked mark</title>
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <div class="sa-widget__flex sa-widget__gap sa-widget__justify-evenly sa-no-track">
+                    <button class="sa-button sa-widget__swatch sa-bg-red"
+                        x-sa-bind:class="{ 'sa-active' : isBgColor('#dc2626') }"
+                        x-sa-on:click="setBgColor('#dc2626')"
+                        aria-label="Change background color to red"
+                        title="Change background color to red"></button>
+                    <button class="sa-button sa-widget__swatch sa-bg-blue"
+                        x-sa-bind:class="{ 'sa-active' : isBgColor('#2563eb') }"
+                        x-sa-on:click="setBgColor('#2563eb')"
+                        aria-label="Change background color to blue"
+                        title="Change background color to blue"></button>
+                    <button class="sa-button sa-widget__swatch sa-bg-green "
+                        x-sa-bind:class="{ 'sa-active' : isBgColor('#16a34a') }"
+                        x-sa-on:click="setBgColor('#16a34a')"
+                        aria-label="Change background color to green"
+                        title="Change background color to green"></button>
+                    <button class="sa-button sa-widget__swatch sa-bg-purple "
+                        x-sa-bind:class="{ 'sa-active' : isBgColor('#9333ea') }"
+                        x-sa-on:click="setBgColor('#9333ea')"
+                        aria-label="Change background color to purple"
+                        title="Change background color to purple"></button>
+                    <button class="sa-button sa-widget__swatch sa-bg-orange "
+                        x-sa-bind:class="{ 'sa-active' : isBgColor('#ea580c') }"
+                        x-sa-on:click="setBgColor('#ea580c')"
+                        aria-label="Change background color to orange"
+                        title="Change background color to orange"></button>
+                    <button class="sa-button sa-widget__swatch sa-bg-teal "
+                        x-sa-bind:class="{ 'sa-active' : isBgColor('#0d9488') }"
+                        x-sa-on:click="setBgColor('#0d9488')"
+                        aria-label="Change background color to teal"
+                        title="Change background color to teal"></button>
+                    <button class="sa-button sa-widget__swatch sa-bg-black "
+                        x-sa-bind:class="{ 'sa-active' : isBgColor('#000') }"
+                        x-sa-on:click="setBgColor('#000')"
+                        aria-label="Change background color to black"
+                        title="Change background color to black"></button>
+                    <button class="sa-button sa-widget__swatch sa-bg-white "
+                        x-sa-bind:class="{ 'sa-active' : isBgColor('#fff') }"
+                        x-sa-on:click="setBgColor('#fff')"
+                        aria-label="Change background color to white"
+                        title="Change background color to white"></button>
+                </div>
+                <button class="sa-widget__reset-btn sa-button sa-no-track"
+                x-sa-on:click="resetBgColor()"
+                x-sa-text="settings.t_reset">Reset</button>
+            </div>
+
+        </div>
+
+        
+
+    </div>
+
+</div>

@@ -1,0 +1,423 @@
+/* JerseyBird template-page / search / embed pages (matches live theme attrs) */
+
+body[data-type_headers_align_text="true"] .section-header {
+  text-align: center;
+}
+
+body.template-page .main-content,
+body.template-search .main-content {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* Search (live /search) */
+.search-content .page-content {
+  padding-top: 0;
+}
+
+.search-bar--page.input-group {
+  display: flex;
+  max-width: 300px;
+  margin: -15px auto 32px;
+  border: 1px solid var(--colorBorder);
+}
+
+body[data-type_headers_align_text="true"] .search-bar--page {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-bar--page .input-group-field {
+  flex: 1;
+  border: none;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-family: var(--typeBasePrimary);
+  min-width: 0;
+  background: #fff;
+}
+
+.search-bar--page .input-group-btn .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--colorBrand);
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  min-height: 100%;
+}
+
+.search-results-area {
+  max-width: var(--pageWidth);
+  margin: 0 auto;
+}
+
+.search-results-area[hidden] {
+  display: none !important;
+}
+
+.search-results__count {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 24px;
+  color: var(--colorTextLight);
+}
+
+.search-results__empty {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 15px;
+  color: var(--colorTextLight);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 769px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+.product-card {
+  display: block;
+  text-align: center;
+}
+
+.product-card__image {
+  display: block;
+  aspect-ratio: 1;
+  background: #f4f4f4;
+  border: 1px solid var(--colorBorder);
+  margin-bottom: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card__image::after {
+  content: "";
+  position: absolute;
+  inset: 20%;
+  background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
+}
+
+.product-card__title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+}
+
+.product-card:hover .product-card__title {
+  color: var(--colorBrand);
+}
+
+/* Policy / FAQ content */
+body.template-page-policy .rte--nomargin .title-desc--center,
+body.template-page .policy-page .title-desc--center {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+body.template-page-policy .rte--nomargin .title-desc--center strong,
+body.template-page-policy .rte--nomargin > .rte:first-of-type strong {
+  font-family: var(--typeHeaderPrimary);
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.template-page-policy .rte ul {
+  margin: 0 0 16px 1.2em;
+}
+
+body.template-page-policy .rte ul li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* Clean up empty blocks from CMS export */
+.title-desc:empty,
+.title-desc strong:empty {
+  display: none;
+}
+
+.rte span[style*="#ffffff"],
+.rte span[style*="ffffff"] {
+  display: none;
+}
+
+/* Ambassador / Paperform embed pages */
+.page-embed .rte--nomargin {
+  min-height: 400px;
+}
+
+.page-embed .paperform-wrapper {
+  border: none;
+  box-shadow: none;
+  min-height: 520px;
+  background: transparent;
+}
+
+/* Pro Series – black full page (live site) */
+body.template-page-pro-series {
+  background: #000 !important;
+}
+
+body.template-page-pro-series .header-sticky-wrapper,
+body.template-page-pro-series .toolbar {
+  background: #fff;
+}
+
+body.template-page-pro-series .pro-series-page .section-header {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+}
+
+body.template-page-pro-series .pro-series-page .paperform-wrapper,
+body.template-page-pro-series .pro-series-page .rte--nomargin {
+  min-height: 70vh;
+  border: none;
+  box-shadow: none;
+  background: #000;
+}
+
+body.template-page-pro-series .main-content {
+  background: #000;
+  padding-top: 24px;
+  padding-bottom: 48px;
+}
+
+/* Home / start project */
+body.template-page-home .paperform-wrapper {
+  min-height: 560px;
+}
+
+/* Collection grid (live collection template) */
+body.template-collection .page-content--top {
+  padding-bottom: 0;
+}
+
+.collection-content {
+  padding-bottom: 48px;
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+}
+
+@media (min-width: 769px) {
+  .collection-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+.grid-product__content {
+  position: relative;
+  text-align: center;
+}
+
+.grid-product__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.grid-product__tag {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #fff;
+  border: 1px solid var(--colorBorder);
+  padding: 4px 8px;
+}
+
+.grid-product__tag--sold-out {
+  color: var(--colorTextLight);
+}
+
+.grid__image-ratio {
+  position: relative;
+  width: 100%;
+  background: #f4f4f4;
+  border: 1px solid var(--colorBorder);
+}
+
+.grid__image-ratio--square::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.grid-product__placeholder {
+  position: absolute;
+  inset: 20%;
+  background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
+}
+
+.grid-product__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.grid-product__title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+.grid-product__price {
+  font-size: 13px;
+  margin-top: 4px;
+  color: var(--colorTextLight);
+}
+
+.grid-product__link:hover .grid-product__title {
+  color: var(--colorBrand);
+}
+
+.collection-empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--colorTextLight);
+}
+
+.collection-empty[hidden] {
+  display: none !important;
+}
+
+/* About (What is JerseyBird?) */
+.about-page .section-header__title {
+  font-size: clamp(22px, 4vw, 32px);
+  letter-spacing: 0.12em;
+}
+
+.about-rte {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.about-rte p {
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+.about-rte h2 {
+  font-family: var(--typeHeaderPrimary);
+  font-size: clamp(18px, 3vw, 26px);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 48px 0 16px;
+}
+
+/* Product detail */
+.product-page__layout {
+  display: grid;
+  gap: 32px;
+  margin-top: 16px;
+}
+
+@media (min-width: 769px) {
+  .product-page__layout {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 48px;
+  }
+}
+
+.product-page__media {
+  position: relative;
+}
+
+.product-page__image-wrap {
+  position: relative;
+  background: #f4f4f4;
+  border: 1px solid var(--colorBorder);
+}
+
+.product-page__image-wrap::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.product-page__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-page__image[hidden] {
+  display: none !important;
+}
+
+.product-page__price {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 12px 0 20px;
+  color: var(--colorPrice, #ff3b3b);
+}
+
+.product-page__description {
+  max-width: 560px;
+  line-height: 1.7;
+  color: var(--colorTextLight);
+}
+
+.product-page .grid-product__tag {
+  position: static;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+/* Membership Stripe embed */
+.membership-page .rte--nomargin {
+  text-align: center;
+}
+
+.membership-terms {
+  max-width: 720px;
+  margin: 24px auto 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #6b7280;
+  text-align: center;
+}
+
+.membership-terms a {
+  color: #6b7280;
+  text-decoration: underline;
+}
