@@ -1,0 +1,17 @@
+/* Paperform embed – keep iframe full width so mobile column layout can apply */
+.paperform-wrapper {
+  width: 100%;
+  max-width: 100%;
+}
+
+.paperform-wrapper iframe {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 600px) {
+  .paperform-wrapper {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

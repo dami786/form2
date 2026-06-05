@@ -20,6 +20,7 @@ HEAD = '''<!DOCTYPE html>
   <link rel="stylesheet" href="css/policy.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/paperform-mobile-sports.css">
   <link rel="stylesheet" href="https://cdn.shopify.com/extensions/019d9b3d-db05-79e1-ad33-4ab8d9a31d79/smart-accessibility-1-24/assets/sa-widget.css">
   <link rel="stylesheet" href="css/a11y-support.css">
   <script>window.sa_shop_domain = 'local';</script>
@@ -28,7 +29,8 @@ HEAD = '''<!DOCTYPE html>
 <body{body_attrs}>
 '''
 
-PAPERFORM_SCRIPT = '''  <script>
+PAPERFORM_SCRIPT = '''  <script src="js/paperform-mobile-sports.js"></script>
+  <script>
     (function () {
       var s = document.createElement('script');
       s.src = 'https://paperform.co/__embed.min.js';
@@ -114,13 +116,7 @@ pages = {
     </div>
   </main>
 ''',
-        '''  <script>
-    (function () {
-      var s = document.createElement('script');
-      s.src = 'https://paperform.co/__embed.min.js';
-      document.body.appendChild(s);
-    })();
-  </script>'''
+        PAPERFORM_SCRIPT
     ),
     'login.html': (
         'Log in',

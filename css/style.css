@@ -308,9 +308,9 @@ ul { list-style: none; }
 /* Paperform embed (live site form) */
 .paperform-wrapper {
   background: #fff;
-  border: 1px solid var(--colorBorder);
-  border-radius: 2px;
-  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
   min-height: 560px;
   overflow: hidden;
 }

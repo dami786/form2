@@ -34,6 +34,7 @@ ref-col-*.html
 ref-product-*.html
 ref-pf-*.html
 ref-paperform-*.html
+_pf_page.html
 pf-embed.min.js
 pf-api.json
 
